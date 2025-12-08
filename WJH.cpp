@@ -1,8 +1,8 @@
 #include "WJH.h"
 #include "ui_WJH.h"
-#include "system_meteo.h"
-
 #include <QDebug>
+
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,8 +26,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->input_ville, &QLineEdit::textChanged,
             this, &MainWindow::onCITY);
 
-//    connect(ui->API_Start_B, &QPushButton::clicked,
-//            this, &MainWindow::onBoutonClique);
+    connect(ui->API_Start_B, &QPushButton::clicked,
+            this, &MainWindow::appelAPI);
 }
 
 
@@ -36,7 +36,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-system_meteo a ;
+
 
 
 // Définition de la fonction slot
@@ -76,6 +76,8 @@ void MainWindow::onAPIkeys(QString api) {
     if (longueur_api == 32) {
         ui->label_api->setText("Votre cle API est valide");
         ui->label_api->setStyleSheet("color: green;");
+        info.setAPIkey(api);
+
     }
     else {
         ui->label_api->setText("Votre cle API est invalide");
@@ -86,12 +88,24 @@ void MainWindow::onAPIkeys(QString api) {
 
 void MainWindow::onCITY(QString ville) {
     qDebug() << "Nouvelle Ville : " << ville;
+    info.setville(ville);
 
 }
 
-//void MainWindow::appelAPI(QString api) {
+void MainWindow::appelAPI() {
 
-//}
+    QString api_key;
+    QString ville;
+
+    qDebug() << "config appel API ";
+    api_key=info.getAPIkey();
+    qDebug() << "nouvelle API KEY";
+
+    ville=info.getville();
+    qDebug() << "nouvelle ville : " << ville;
+
+
+}
 void MainWindow::change_labels(int value) {
     switch (value) {
     case 0:

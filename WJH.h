@@ -1,7 +1,9 @@
 #ifndef WJH_H
 #define WJH_H
-
+#include "api.h"
 #include <QMainWindow>
+#include "system_meteo.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,13 +18,18 @@ public:
     ~MainWindow();
 
 private slots:
-    void onTempChanged(int value);  // Ajoutez cette ligne
-    void onventChanged(int value);  // Ajoutez cette ligne
-    void onatmoChanged(int value);  // Ajoutez cette ligne
+    void onTempChanged(int value);
+    void onventChanged(int value);
+    void onatmoChanged(int value);
     void change_labels(int value);
     void onAPIkeys(QString api);
     void onCITY (QString ville);
+    void appelAPI();
+
 private:
     Ui::MainWindow *ui;
+    API info;
+    system_meteo a ;
+
 };
 #endif // WJH_H

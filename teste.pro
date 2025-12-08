@@ -10,11 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     WJH.cpp \
+    api.cpp \
     main.cpp \
     system_meteo.cpp
 
 HEADERS += \
     WJH.h \
+    api.h \
     system_meteo.h
 
 FORMS += \
