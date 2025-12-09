@@ -105,7 +105,8 @@ void MainWindow::appelAPI() {
     qDebug() << "nouvelle ville : " << ville;
 
     qDebug() << "lancement appel API ";
-    qDebug() << info.apiRequest(api_key,ville);
+    info.setmeteo_data(info.apiRequest(api_key,ville));
+    qDebug() << info.getmeteo_data();
 
 
 }

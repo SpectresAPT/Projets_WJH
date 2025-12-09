@@ -43,8 +43,8 @@
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>260</y>
-        <width>781</width>
+        <y>250</y>
+        <width>731</width>
         <height>191</height>
        </rect>
       </property>
@@ -154,7 +154,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>30</y>
         <width>113</width>
         <height>20</height>
        </rect>
@@ -164,7 +164,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>110</y>
         <width>113</width>
         <height>20</height>
        </rect>
@@ -174,7 +174,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>0</y>
+        <y>10</y>
         <width>131</width>
         <height>16</height>
        </rect>
@@ -187,26 +187,26 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>40</y>
+        <y>50</y>
         <width>231</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Votre c'est API est </string>
+       <string>En attent de clée API</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
-        <width>37</width>
-        <height>12</height>
+        <y>90</y>
+        <width>101</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Ville :</string>
+       <string>Votre ville :</string>
       </property>
      </widget>
      <widget class="Line" name="line">
@@ -246,6 +246,115 @@
       </property>
       <property name="orientation">
        <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_API_vent">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>50</y>
+        <width>311</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>vitesse de vent en noeud : NO DATA</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_API_atmo">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>80</y>
+        <width>351</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>pression atmospherique en pascals : NO DATA</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_API_temp">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>110</y>
+        <width>281</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>température en °C : NO DATA</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line_3">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>0</y>
+        <width>20</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="Line" name="line_4">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>30</y>
+        <width>431</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TITEL">
+      <property name="geometry">
+       <rect>
+        <x>461</x>
+        <y>10</y>
+        <width>161</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DONNÉ ENVOYER PAR L'API</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="message_API">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>781</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>en attente de DATA .</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
     </widget>

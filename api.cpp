@@ -39,9 +39,10 @@ void API::setville(QString ville){
     m_ville=ville;
 }
 
-void API::setmeteo_data(QString data){
-    m_meteo_data=data;
+void API::setmeteo_data(QString meteo_data){
+    m_meteo_data=meteo_data;
 }
+
 
 
 QString API::apiRequest(QString API_key,QString ville){
