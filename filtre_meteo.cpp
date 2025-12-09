@@ -5,19 +5,13 @@
 
 using namespace std;
 
-int main()
-{
-    istringstream iss( "mot1;mot2;mot3;mot4" ); //changer les mots a filtrer
-    string mot;
-    while ( std::getline( iss, mot, ';' ) ) //changer le ; en un ,
-    {
-        cout << mot << '\n';
-    }
-}
-
-//mettre la ligne api en tant que base pour le filtre
-
 filtre_meteo::filtre_meteo()
 {
+    m_data_non_filtr="";
+}
 
+QString filtre_meteo::trieData(QString Databrut){
+    QString dataclean;
+    //Databrut==donné api brut
+    return dataclean;
 }

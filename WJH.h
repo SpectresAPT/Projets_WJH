@@ -3,6 +3,8 @@
 #include "api.h"
 #include <QMainWindow>
 #include "system_meteo.h"
+#include "filtre_meteo.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -30,6 +32,7 @@ private:
     Ui::MainWindow *ui;
     API info;
     system_meteo a ;
+    filtre_meteo fi;
 
 };
 #endif // WJH_H

@@ -1,5 +1,6 @@
 #include "WJH.h"
 #include "ui_WJH.h"
+
 #include <QDebug>
 
 
@@ -107,6 +108,7 @@ void MainWindow::appelAPI() {
     qDebug() << "lancement appel API ";
     info.setmeteo_data(info.apiRequest(api_key,ville));
     qDebug() << info.getmeteo_data();
+    QString cleanDataM = fi.trieData(info.getmeteo_data());
 
 
 }
