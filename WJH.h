@@ -24,10 +24,11 @@ private slots:
     void onventChanged(int value);
     void onatmoChanged(int value);
     void change_labels(int value);
+    void change_labelsAPI(int value);
     void onAPIkeys(QString api);
     void onCITY (QString ville);
     void appelAPI();
-
+    bool apierror(QString message);
 private:
     Ui::MainWindow *ui;
     API info;

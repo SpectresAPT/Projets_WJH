@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 filtre_meteo::filtre_meteo()
 {
     m_data_non_filtr = "";
@@ -17,6 +18,7 @@ double filtre_meteo::kmENnoeuds(double kmh) const
 {
     return kmh / 1.852;
 }
+
 
 QString filtre_meteo::trieData(QString Databrut)
 {
@@ -61,9 +63,9 @@ QString filtre_meteo::trieData(QString Databrut)
     dataclean = QString("Vitesse du vent: %1 noeuds\n"
                        "Température: %2 °C\n"
                        "Pression: %3 hPa")
-                .arg(m_vitesse_vent, 0, 'f', 2)
-                .arg(m_temperature, 0, 'f', 1)
-                .arg(m_pression_atmo, 0, 'f', 1);
+                .arg(m_vitesse_vent)
+                .arg(m_temperature)
+                .arg(m_pression_atmo);
 
     qDebug() << "Données filtrées:" << dataclean;
 
