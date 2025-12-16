@@ -28,6 +28,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->API_Start_B, &QPushButton::clicked,
             this, &MainWindow::appelAPI);
+
+    connect(ui->City_long, &QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+            this, &MainWindow::onLongChanged);
+
+    connect(ui->City_lat, &QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+            this, &MainWindow::onLatChanged);
 }
 
 

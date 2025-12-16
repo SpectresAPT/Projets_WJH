@@ -12,6 +12,9 @@ filtre_meteo::filtre_meteo()
     m_vitesse_vent = 0.0;
     m_temperature = 0.0;
     m_pression_atmo = 0.0;
+    m_latitude = 0.0;
+    m_longitude = 0.0;
+    m_deg_vent = 0.0;
 }
 
 double filtre_meteo::kmENnoeuds(double kmh) const
@@ -60,29 +63,69 @@ QString filtre_meteo::trieData(QString Databrut)
         }
     }
 
-    dataclean = QString("Vitesse du vent: %1 noeuds\n"
-                       "Température: %2 °C\n"
-                       "Pression: %3 hPa")
-                .arg(m_vitesse_vent)
-                .arg(m_temperature)
-                .arg(m_pression_atmo);
+    if (jsonObj.contains("coord") && jsonObj["coord"].isObject())
+    {
+        QJsonObject coord = jsonObj["coord"].toObject();
 
-    qDebug() << "Données filtrées:" << dataclean;
+        if (coord.contains("lon"))
+        {
+            m_longitude = coord["lon"].toDouble();
+        }
 
-    return dataclean;
-}
+        if (coord.contains("lat")) {
+            m_latitude = coord["lat"].toDouble();
+        }
+    }
 
-double filtre_meteo::getVitesse_vent() const
-{
-    return m_vitesse_vent;
-}
+    if (jsonObj.contains("wind") && jsonObj["wind"].isObject())
+    {
+        QJsonObject wind = jsonObj["wind"].toObject();
 
-double filtre_meteo::getTemperature() const
-{
-    return m_temperature;
-}
+        if (wind.contains("deg"))
+        {
+            m_deg_vent = wind["deg"].toDouble();
+        }
+    }
 
-double filtre_meteo::getPression_atmo() const
-{
-    return m_pression_atmo;
-}
+
+        dataclean = QString("Vitesse du vent: %1 noeuds\n"
+                            "Température: %2 °C\n"
+                            "Pression: %3 hPa")
+                        .arg(m_vitesse_vent)
+                        .arg(m_temperature)
+                        .arg(m_pression_atmo);
+
+        qDebug() << "Données filtrées:" << dataclean;
+
+        return dataclean;
+    }
+
+    double filtre_meteo::getVitesse_vent() const
+    {
+        return m_vitesse_vent;
+    }
+
+    double filtre_meteo::getTemperature() const
+    {
+        return m_temperature;
+    }
+
+    double filtre_meteo::getPression_atmo() const
+    {
+        return m_pression_atmo;
+    }
+
+    double filtre_meteo::getLongitude() const
+    {
+        return m_longitude;
+    }
+
+    double filtre_meteo::getLatitude() const
+    {
+        return m_latitude;
+    }
+
+    double filtre_meteo::getDegre_vent() const
+    {
+        return m_deg_vent;
+    }
