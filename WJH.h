@@ -29,6 +29,7 @@ private slots:
     void onCITY (QString ville);
     void appelAPI();
     bool apierror(QString message);
+    QString mettreAJourDirectionVent(double deg);
 private:
     Ui::MainWindow *ui;
     API info;

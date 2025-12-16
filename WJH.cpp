@@ -29,11 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->API_Start_B, &QPushButton::clicked,
             this, &MainWindow::appelAPI);
 
-    connect(ui->City_long, &QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-            this, &MainWindow::onLongChanged);
-
-    connect(ui->City_lat, &QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-            this, &MainWindow::onLatChanged);
 }
 
 
@@ -187,10 +182,20 @@ void MainWindow::appelAPI() {
             ui->label_API_vent->setText(QString("vitesse de vent en noeud : %1").arg(fi.getVitesse_vent()));
             ui->label_API_temp->setText(QString("température en °C : %1").arg(fi.getTemperature()));
             ui->label_API_atmo->setText(QString("pression atmospherique : %1").arg(fi.getPression_atmo()));
+            ui->City_long->setText(QString("longitude de la ville : %1").arg(fi.getLongitude()));
+            ui->City_lat->setText(QString("latitude de la ville : %1").arg(fi.getLatitude()));
+
+
             a.set_d_atmo(fi.getPression_atmo());
             a.set_d_temp(fi.getTemperature());
             a.set_d_vent(fi.getVitesse_vent());
             change_labelsAPI(a.get_danger());
+
+            QString degW = mettreAJourDirectionVent(fi.getDegre_vent());
+            ui->deg_vent->setText(degW);
+
+
+
 
         }
         else {
@@ -203,6 +208,38 @@ void MainWindow::appelAPI() {
     }
 
 }
+
+QString MainWindow::mettreAJourDirectionVent(double deg) {
+
+    // Conversion en int pour faciliter les comparaisons (le cast est automatique)
+    int d = static_cast<int>(deg);
+
+    // Sécurité au cas où on reçoit des doubles bizarres, bien que vous ayez dit que c'est normalisé.
+    // (Optionnel si vous êtes sûr de vos données 0-359)
+    // d = d % 360;
+    // if (d < 0) d += 360;
+
+    if ((d >= 337 && d <= 359) || (d >= 0 && d < 22)) {
+        return "↑"; // Nord
+    } else if (d >= 22 && d < 67) {
+        return "⬈"; // Nord-Est
+    } else if (d >= 67 && d < 112) {
+        return "→"; // Est
+    } else if (d >= 112 && d < 157) {
+        return "⬊"; // Sud-Est
+    } else if (d >= 157 && d < 202) {
+        return "↓"; // Sud
+    } else if (d >= 202 && d < 247) {
+        return "⬋"; // Sud-Ouest
+    } else if (d >= 247 && d < 292) {
+        return "←"; // Ouest
+    } else if (d >= 292 && d < 337) {
+        return "⬉"; // Nord-Ouest
+    }
+
+    return "?";
+}
+
 
 void MainWindow::change_labelsAPI(int value) {
     switch (value) {

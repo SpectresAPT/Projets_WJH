@@ -290,7 +290,7 @@
         <x>430</x>
         <y>0</y>
         <width>20</width>
-        <height>161</height>
+        <height>221</height>
        </rect>
       </property>
       <property name="orientation">
@@ -320,14 +320,14 @@
        </rect>
       </property>
       <property name="text">
-       <string>DONNÉ ENVOYER PAR L'API</string>
+       <string>Données envoyées par l’API</string>
       </property>
      </widget>
      <widget class="QLabel" name="message_API">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>220</y>
+        <y>250</y>
         <width>781</width>
         <height>191</height>
        </rect>
@@ -346,6 +346,44 @@
       </property>
       <property name="autoFillBackground">
        <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Style du QGroupBox (Conteneur) */
+QGroupBox {
+    border: 3px solid #1abc9c;
+    border-radius: 10px;
+    margin-top: 15px; 
+    background-color: #ecf0f1;
+}
+
+/* Style du titre du GroupBox */
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* Haut à gauche */
+    padding: 0 10px;
+    color: #1abc9c;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ecf0f1;
+}
+
+/* Style des Labels DANS le GroupBox */
+QGroupBox QLabel {
+    color: #2c3e50;
+    font-family: &quot;Arial&quot;, sans-serif;
+    font-size: 12px;
+    padding: 5px;
+}
+
+/* Style d'un QLabel spécifique (doit avoir objectName=&quot;label_etat_important&quot;) */
+QGroupBox #label_etat_important {
+    color: white;
+    background-color: #e74c3c; /* Rouge pour l'état */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px; /* Plus d'espace pour l'effet de bouton/badge */
+    font-weight: bold;
+}</string>
       </property>
       <property name="text">
        <string>en attente de DATA .</string>
@@ -367,6 +405,71 @@
        <string>Pas d'erreur pour la moment</string>
       </property>
      </widget>
+     <widget class="QLabel" name="City_long">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>140</y>
+        <width>281</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>longitude de la ville :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="City_lat">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>170</y>
+        <width>281</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>latitude de la ville :</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="deg_vent">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>180</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    /* Augmente la taille de la police */
+    font-size: 36px; 
+    
+    /* Autres options de style (facultatif) */
+    color: #34495e; /* Couleur de texte bleu marine */
+    font-weight: bold; /* Texte en gras */
+}</string>
+      </property>
+      <property name="text">
+       <string>←</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="City_lat_2">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>200</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>orientation du vent :</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -376,7 +479,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
