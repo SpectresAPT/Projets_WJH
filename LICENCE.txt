@@ -1,0 +1,20 @@
+Licence MIT (modifiée – usage non commercial)
+
+Autorisation :
+Toute personne obtenant une copie de ce logiciel et de sa documentation (le "Logiciel") est autorisée à :
+- Utiliser le Logiciel pour un usage personnel, éducatif ou non commercial.
+- Copier, modifier et partager le Logiciel librement, à condition que ce soit **sans but commercial**.
+- Distribuer des copies ou des versions modifiées **à condition que le Logiciel ne soit pas vendu**.
+
+Conditions :
+- Le copyright et cette licence doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.
+
+Avertissement :
+Le Logiciel est fourni "tel quel", sans aucune garantie, explicite ou implicite, y compris mais sans s’y limiter :
+- la qualité marchande,
+- l’adaptation à un usage particulier,
+- l’absence de contrefaçon.
+
+En aucun cas, l’auteur ne pourra être tenu responsable de tout dommage ou perte résultant de l’utilisation du Logiciel.
+
+Copyright (c) 2025 M0bley-git & jr534
