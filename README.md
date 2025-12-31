@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-C++-green)](#)
 [![Tech](https://img.shields.io/badge/Tech-C%2B%2B%20%26%20QT-blueviolet)](#)
+[![API](https://img.shields.io/badge/API-OpenWeather-lightblue)](#)
 
 ---
 
