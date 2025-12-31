@@ -3,8 +3,8 @@ Licence MIT (modifiée – usage non commercial)
 Autorisation :
 Toute personne obtenant une copie de ce logiciel et de sa documentation (le "Logiciel") est autorisée à :
 - Utiliser le Logiciel pour un usage personnel, éducatif ou non commercial.
-- Copier, modifier et partager le Logiciel librement, à condition que ce soit **sans but commercial**.
-- Distribuer des copies ou des versions modifiées **à condition que le Logiciel ne soit pas vendu**.
+- Copier, modifier et partager le Logiciel librement, à condition que ce soit sans but commercial.
+- Distribuer des copies ou des versions modifiées à condition que le Logiciel ne soit pas vendu.
 
 Conditions :
 - Le copyright et cette licence doivent être inclus dans toutes les copies ou parties substantielles du Logiciel.
